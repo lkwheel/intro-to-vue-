@@ -12,7 +12,7 @@
 </template>
 <script>
 export default {
-  name: "ReviewList",
+  name: 'ReviewList',
   props: {
     reviews: {
       type: Array,

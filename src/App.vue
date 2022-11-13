@@ -1,16 +1,20 @@
 <template>
   <div id="app">
-    <div class="nav-bar"></div>
+    <AppHeader></AppHeader>
     <div class="cart">Cart({{ cart.length }})</div>
-    <ProductDisplay :premium="premium" @add-to-cart="updateCart"></ProductDisplay>
+    <ProductDisplay
+      :premium="premium"
+      @add-to-cart="updateCart"
+    ></ProductDisplay>
   </div>
 </template>
 
 <script>
-import ProductDisplay from "./components/product-display.vue";
+import AppHeader from '@/components/app-header.vue';
+import ProductDisplay from './components/product-display.vue';
 
 export default {
-  name: "App",
+  name: 'App',
   data() {
     return {
       cart: [],
@@ -18,13 +22,14 @@ export default {
     };
   },
   components: {
+    AppHeader,
     ProductDisplay,
   },
   methods: {
     updateCart(id) {
       this.cart.push(id);
-    }
-  }
+    },
+  },
 };
 </script>
 

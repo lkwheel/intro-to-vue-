@@ -40,13 +40,13 @@
 </template>
 
 <script>
-import blueSocks from "@/assets/images/socks_blue.jpg";
-import greenSocks from "@/assets/images/socks_green.jpg";
-import ReviewForm from "@/components/review-form.vue";
-import ReviewList from "@/components/review-list.vue";
+import blueSocks from '@/assets/images/socks_blue.jpg';
+import greenSocks from '@/assets/images/socks_green.jpg';
+import ReviewForm from '@/components/review-form.vue';
+import ReviewList from '@/components/review-list.vue';
 
 export default {
-  name: "ProductDisplay",
+  name: 'ProductDisplay',
   components: {
     ReviewForm,
     ReviewList,
@@ -59,25 +59,25 @@ export default {
   },
   data: () => {
     return {
-      activeClass: "active-circle",
-      product: "Socks",
-      brand: "Vue Mastery",
+      activeClass: 'active-circle',
+      product: 'Socks',
+      brand: 'Vue Mastery',
       inventory: 10,
-      details: ["50% cotton", "30% wool", "20% ployester"],
+      details: ['50% cotton', '30% wool', '20% ployester'],
       selectedVariant: 0,
       variants: [
         {
           id: 2234,
-          color: "green",
+          color: 'green',
           image: greenSocks,
-          alt: "Green Socks",
+          alt: 'Green Socks',
           quantity: 50,
         },
         {
           id: 2235,
-          color: "blue",
+          color: 'blue',
           image: blueSocks,
-          alt: "Blue Socks",
+          alt: 'Blue Socks',
           quantity: 0,
         },
       ],
@@ -86,7 +86,7 @@ export default {
   },
   computed: {
     title() {
-      return this.brand + " " + this.product;
+      return this.brand + ' ' + this.product;
     },
     src() {
       return this.variants[this.selectedVariant].image;
@@ -99,7 +99,7 @@ export default {
     },
     shipping() {
       if (this.premium) {
-        return "Free";
+        return 'Free';
       }
       return 2.99;
     },
@@ -108,7 +108,7 @@ export default {
     // Note: don't use arrow functions on instance properties
     // See: https://v2.vuejs.org/v2/guide/instance.html#Properties-and-Methods
     addToCart() {
-      this.$emit("add-to-cart", this.variants[this.selectedVariant].id);
+      this.$emit('add-to-cart', this.variants[this.selectedVariant].id);
     },
     updateVariant(index) {
       this.selectedVariant = index;

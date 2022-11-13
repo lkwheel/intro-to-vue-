@@ -21,18 +21,18 @@
 </template>
 <script>
 export default {
-  name: "ReviewForm",
+  name: 'ReviewForm',
   data() {
     return {
-      name: "",
-      review: "",
+      name: '',
+      review: '',
       rating: null,
     };
   },
   methods: {
     onSubmit() {
-      if ((this.name === "" || this.review === "", this.rating === null)) {
-        alert("Review is incomplete");
+      if ((this.name === '' || this.review === '', this.rating === null)) {
+        alert('Review is incomplete');
         return;
       }
       let productReview = {
@@ -41,10 +41,10 @@ export default {
         rating: this.rating,
       };
 
-      this.$emit("review-submitted", productReview);
+      this.$emit('review-submitted', productReview);
 
-      this.name = "";
-      this.review = "";
+      this.name = '';
+      this.review = '';
       this.rating = null;
     },
   },
